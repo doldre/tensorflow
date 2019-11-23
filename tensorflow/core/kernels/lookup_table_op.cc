@@ -957,7 +957,7 @@ class LookupTableImportOp : public LookupTableOpKernel {
     const Tensor& values = ctx->input(2);
     OP_REQUIRES_OK(ctx, table->CheckKeyAndValueTensorsForImport(keys, values));
 
-    int memory_used_before = 0;
+    int64 memory_used_before = 0;
     if (ctx->track_allocations()) {
       memory_used_before = table->MemoryUsed();
     }
